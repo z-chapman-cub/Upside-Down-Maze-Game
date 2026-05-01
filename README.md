@@ -1,0 +1,15 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6aNknfgz)
+# Escape the Upside Down Maze
+Escape a dangerous maze as Eleven inspired by the popular series Stranger Things while fending off Demogorgons and
+collecting powerups in a board style game. Originally given as a homework assignment for my Intensive Programming Workshop
+class, I turned the assignment into an experiment with graph algorithms. The board is dynamically generated as 
+the player moves into unexplored territory while always guaranteeing a path using Disjoint Set Union. Also, the enemies
+use Dijkstra's single-source shortest path algorithm to move closer to the player. Turn logic and event processing
+is written around what the SFML libraries provide which allows smoothing of the camera and movements of game entities
+while providing a foundation to swap out the visuals in the future.
+
+## How to Run
+From the /maze directory compile and run with "make".
+
+Preview:
+![My Image](img.png)

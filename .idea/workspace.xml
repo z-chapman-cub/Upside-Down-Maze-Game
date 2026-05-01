@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppFormatterOtherPage" type="string" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5c9ba7a0-1307-43e9-a078-7ecd44c2330d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze" beforeDir="false" afterPath="$PROJECT_DIR$/maze" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze/Entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/maze/Entity.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze/Game.o" beforeDir="false" afterPath="$PROJECT_DIR$/maze/Game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze/maze" beforeDir="false" afterPath="$PROJECT_DIR$/maze/maze" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter_code/Game.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter_code/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter_code/Player.h" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/maze" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;z-chapman-cub&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/z-chapman-cub/Maze-Game.git",
+    "accountId": "93d29ed3-796d-43d6-bfdd-031281ec961b"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/maze/part2/Entity.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/maze/part2/Game.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/starter_code/Game.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="l2KwRVHd" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2025" />
+    <option name="minorVersion" value="3.2" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="38zcmSX12LgCELQCqzVtgKf31r7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectStatusUIService">{
+  &quot;uiKindId&quot;: &quot;Widget&quot;
+}</component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.InitialBoard.cpp.executor": "Run",
+    "C/C++ File.StructTest.cpp.executor": "Run",
+    "C/C++ File.main.cpp.executor": "Run",
+    "CMake Debug.hw_1_escape_the_upside_down_maze_z_chapman_cub.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/zane/Documents/Portfolio/Maze",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/maze/part2" />
+      <recent name="$PROJECT_DIR$/maze" />
+      <recent name="$PROJECT_DIR$/maze/part2/emojif" />
+      <recent name="$PROJECT_DIR$/maze/part2/emoji" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/maze" />
+      <recent name="$PROJECT_DIR$/maze/part2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="C/C++ File.StructTest.cpp">
+    <configuration name="hw_1_escape_the_upside_down_maze_z_chapman_cub" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="InitialBoard.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Maze" TARGET_NAME="InitialBoard.cpp" CONFIG_NAME="InitialBoard.cpp">
+      <option name="sourceFile" value="$APPLICATION_CONFIG_DIR$/scratches/InitialBoard.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StructTest.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Maze" TARGET_NAME="StructTest.cpp" CONFIG_NAME="StructTest.cpp">
+      <option name="sourceFile" value="$APPLICATION_CONFIG_DIR$/scratches/StructTest.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hw-1-escape-the-upside-down-maze-z-chapman-cub" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
+      <option name="sourceFile" value="maze/part2/main.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="C/C++ File.StructTest.cpp" />
+        <item itemvalue="C/C++ File.InitialBoard.cpp" />
+        <item itemvalue="C/C++ File.main.cpp" />
+        <item itemvalue="CMake Debug.hw_1_escape_the_upside_down_maze_z_chapman_cub" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c9ba7a0-1307-43e9-a078-7ecd44c2330d" name="Changes" comment="" />
+      <created>1769805999179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769805999179</updated>
+      <workItem from="1769806000218" duration="1691000" />
+      <workItem from="1769905827997" duration="636000" />
+      <workItem from="1770124238663" duration="14898000" />
+      <workItem from="1770229398079" duration="2980000" />
+      <workItem from="1770344206150" duration="2031000" />
+      <workItem from="1770346572685" duration="50715000" />
+      <workItem from="1770864042990" duration="621000" />
+      <workItem from="1770870610069" duration="52723000" />
+      <workItem from="1771192089298" duration="35000" />
+      <workItem from="1771206867951" duration="625000" />
+      <workItem from="1771208738093" duration="68000" />
+      <workItem from="1771300198626" duration="1552000" />
+      <workItem from="1771304998119" duration="3046000" />
+      <workItem from="1771308065240" duration="39587000" />
+      <workItem from="1771374689904" duration="9385000" />
+      <workItem from="1771384099891" duration="8891000" />
+      <workItem from="1771394164520" duration="8512000" />
+      <workItem from="1773263968064" duration="807000" />
+      <workItem from="1773330499335" duration="9000" />
+      <workItem from="1773330748431" duration="2112000" />
+      <workItem from="1773558353067" duration="13245000" />
+      <workItem from="1773571606810" duration="57270000" />
+      <workItem from="1775667770391" duration="21304000" />
+      <workItem from="1776377109192" duration="1459000" />
+      <workItem from="1776407926875" duration="627000" />
+      <workItem from="1777018166486" duration="82245000" />
+      <workItem from="1777191928143" duration="39439000" />
+      <workItem from="1777276199571" duration="2153000" />
+      <workItem from="1777281844186" duration="20292000" />
+      <workItem from="1777400971741" duration="76000" />
+      <workItem from="1777401127286" duration="23611000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
