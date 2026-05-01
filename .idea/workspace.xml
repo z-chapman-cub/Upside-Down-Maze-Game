@@ -28,18 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c9ba7a0-1307-43e9-a078-7ecd44c2330d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/maze.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze" beforeDir="false" afterPath="$PROJECT_DIR$/maze" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze/Entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/maze/Entity.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze/Game.o" beforeDir="false" afterPath="$PROJECT_DIR$/maze/Game.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze/maze" beforeDir="false" afterPath="$PROJECT_DIR$/maze/maze" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter_code/Game.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter_code/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/starter_code/Player.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Entity.o" beforeDir="false" afterPath="$PROJECT_DIR$/game/Entity.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game.o" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/maze" beforeDir="false" afterPath="$PROJECT_DIR$/game/maze" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/maze" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/game" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,7 +59,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/z-chapman-cub/Maze-Game.git",
+    "url": "https://github.com/z-chapman-cub/Upside-Down-Maze-Game.git",
     "accountId": "93d29ed3-796d-43d6-bfdd-031281ec961b"
   }
 }]]></component>
@@ -208,7 +206,7 @@
       <workItem from="1777276199571" duration="2153000" />
       <workItem from="1777281844186" duration="20292000" />
       <workItem from="1777400971741" duration="76000" />
-      <workItem from="1777401127286" duration="23611000" />
+      <workItem from="1777401127286" duration="26451000" />
     </task>
     <servers />
   </component>
