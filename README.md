@@ -1,5 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6aNknfgz)
-# Escape the Upside Down Maze
+# Escape the Upside Down Maze (In-Development)
 Escape a dangerous maze as Eleven inspired by the popular series Stranger Things while fending off Demogorgons and
 collecting powerups in a board style game. Originally given as a homework assignment for my Intensive Programming Workshop
 class, I turned the assignment into an experiment with graph algorithms. The board is dynamically generated as 
