@@ -66,7 +66,7 @@ void Render::drawMessage(Text& txt,string message,int x,int y) {
   txt.setPosition(x,y);
   window.draw(txt);
 }
-
+#include<iostream>
 //Display messages from circular queue
 void Render::displayMessages() {
   defaultView();
@@ -75,15 +75,17 @@ void Render::displayMessages() {
 
   int x=50,y=1650,mic=mi;
   for(int i=0;i<3;i++) {
-    auto message=messages[mic++%3];//fix
-    if(message==""){continue;}
-    drawMessage(txt,message,x,y);
-    y+=80;//
+    auto message=messages[mic];
+    mic=(mic+1)%3;
+    if(message!="") {
+      drawMessage(txt,message,x,y);
+      y+=80;//
+    }
   }
 }
 
 //Add message to circular queue
 void Render::addMessage(string message) {
-  messages[mi++]=message;
-  if(mi==(int)size(messages)){mi=0;}
+  messages[mi]=message;
+  mi=(mi+1)%3;
 }

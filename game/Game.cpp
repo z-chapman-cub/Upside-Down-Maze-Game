@@ -54,9 +54,6 @@ void Game::newGame() {
   player=new Player(Board_->origin_);
   Board_->Dijkstra(player->position);//Ensure spawned enemy can reach player
   Board_->spawnEnemies(1,enemies,player);
-  ite=begin(enemies);
-
-  Render_->addMessage(std::to_string(enemies.size()));
 }
 
 //The player is on a trap
@@ -197,18 +194,29 @@ void Game::playerTurn(const Position* pos) {
 
 //The enemies take their turns
 void Game::enemyTurns() {
-  while(ite!=end(enemies)) {//Each enemy takes a turn
-    Board_->Dijkstra(player->position);//Compute single source shortest paths from player position to all enemies
-    const auto curr=ite;
-    ++ite;
-    demogorgonTurn(curr->second.get());
-
-    if(player->combat) {//Each enemy may attack separately
-      turn=GameState::PlayerTurn;
-      return;
+  if(not iterating) {
+    keys.clear();
+    for(auto&[key,ptr]:enemies) {
+      keys.push_back(key);
     }
+    ite=begin(keys);
+    iterating=true;
   }
-  ite=begin(enemies);
+
+  while(ite!=end(keys)){
+    auto it=enemies.find(*ite);
+    if(it!=end(enemies)) {
+      Board_->Dijkstra(player->position);
+      demogorgonTurn(it->second.get());
+
+      if(player->combat) {//Each enemy may attack separately
+        turn=GameState::PlayerTurn;
+        return;
+      }
+    }
+    ++ite;
+  }
+  iterating=false;
   turn=GameState::PlayerTurn;
 }
 
@@ -313,8 +321,9 @@ void Game::displayTeleport(Vector2f mos) const {
 
 //Remove enemy from board
 void Game::Banish(const Position* pos) {
-  if(ite!=end(enemies) and pos==ite->first) {//Safely remove enemies from container
-    ite=enemies.erase(ite);
+  auto it=enemies.find(*ite);
+  if(it!=end(enemies) and pos==it->first) {//Safely remove enemies from container
+    enemies.erase(it);
   }else {
     enemies.erase(pos);
   }

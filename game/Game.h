@@ -58,8 +58,11 @@ public:
 	//Entities that take turns
 	Player* player;
 
+	//Enemies and their iteration
 	unordered_map<const Position*,unique_ptr<Demogorgon>> enemies;
-	unordered_map<const Position*,unique_ptr<Demogorgon>>::iterator ite;
+	vector<const Position*>::iterator ite;
+	vector<const Position*> keys;
+	bool iterating=false;
 
 	//Outer logic
 	Vector2<float> mos;//Mouse position

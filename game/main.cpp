@@ -27,6 +27,7 @@ int main(){
   Clock turnClock;
   const float turnDelay=0.2f;
   board->getValidMoves(*game->player->position);
+
   //MAIN LOOP
   while(render->window.isOpen()) {
     game->Display();//Display graphics
