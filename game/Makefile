@@ -1,5 +1,5 @@
-CXX = g++ -fsanitize=address,undefined
-#CXX = g++
+#CXX = g++ -fsanitize=address,undefined
+CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Werror -Wpedantic
 LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
 

@@ -79,6 +79,6 @@ void Demogorgon::deactivateEmpowerment() {
 }
 
 Vector2f Entity::getCamera() const {
-  return {static_cast<float>(position->col*Render::window_const),
-    static_cast<float>(position->row*Render::window_const)};
+  return {static_cast<float>(position->col*Render::window_const+Render::scene_const),
+    static_cast<float>(position->row*Render::window_const+Render::scene_const)};
 }

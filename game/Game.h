@@ -51,7 +51,6 @@ public:
 	void displayTeleport(Vector2f mos) const;
 	void displayEnd() const;
 
-	void restartClock(){dt=clock.restart().asSeconds();}
 	void centerCamera();
 
 	//FIELDS
@@ -67,8 +66,6 @@ public:
 	//Outer logic
 	Vector2<float> mos;//Mouse position
 	GameState turn;
-	Clock clock;
-	float dt;
 
 	//Helpers
 	const unordered_map<const Keyboard::Key,int> inputToPos=

@@ -23,7 +23,6 @@ int main(){
   auto* game=new Game(board,render);
 
   game->newGame();
-
   Clock turnClock;
   const float turnDelay=0.2f;
   board->getValidMoves(*game->player->position);

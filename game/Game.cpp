@@ -2,12 +2,9 @@
 #include<vector>
 #include<unordered_map>
 #include<unordered_set>
-#include<algorithm>
 #include<utility>
 #include<cmath>
 #include<random>
-#include<climits>
-#include<queue>
 #include<cfloat>
 
 #include "Game.h"
@@ -36,7 +33,7 @@ void Game::Combat(Demogorgon* enemy) {
 
 //GAME
 Game::Game(Board* board,Render* render):
-  player(nullptr),turn(GameState::PlayerTurn),dt(0)
+  player(nullptr),turn(GameState::PlayerTurn)
 {
   Render_=render;
   Board_=board;
@@ -54,6 +51,8 @@ void Game::newGame() {
   player=new Player(Board_->origin_);
   Board_->Dijkstra(player->position);//Ensure spawned enemy can reach player
   Board_->spawnEnemies(1,enemies,player);
+
+  Render_->addPlayerLight(player->position->col,player->position->row);
 }
 
 //The player is on a trap
@@ -92,9 +91,10 @@ void Game::inCombat(const Event& e) {
     player->toggleCombat();
     turn=GameState::EnemyTurn;
 
-  }else if(e.key.code==Keyboard::T) {
-    player->toggleTeleporting();
   }
+  // else if(e.key.code==Keyboard::T) {
+  //   player->toggleTeleporting();
+  // }
 }
 
 //The player is toggling a spell cast
@@ -117,12 +117,13 @@ void Game::castSpell(const Event& e) {
         Render_->addMessage("No Demogorgons are in range!");
       }
     }
-  }else if(e.key.code==Keyboard::T){//Teleport
-    if(player->banishing) {//Swap from banishing to teleporting
-      player->toggleBanishing();
-    }
-    player->toggleTeleporting();
   }
+  // else if(e.key.code==Keyboard::T){//Teleport
+  //   if(player->banishing) {//Swap from banishing to teleporting
+  //     player->toggleBanishing();
+  //   }
+  //   player->toggleTeleporting();
+  // }
 }
 
 //Process the user's input
@@ -263,7 +264,7 @@ void Game::displayBanish() const {
     Render_->setPosition(sprite,*pos);
     Render_->setScale(sprite);
     sprite.setColor(Color(255,255,255,128));
-    Render_->window.draw(sprite);
+    Render_->sceneTexture.draw(sprite);
   }
   Render_->defaultView();
 
@@ -283,9 +284,14 @@ void Game::displayTeleport(Vector2f mos) const {
 
   auto pos=player->position;
   float minDist=FLT_MAX,
-      xm=mos.x/Render::window_const,
-      ym=mos.y/Render::window_const;
+      xm=(mos.x-Render_->camera.getCenter().x)/Render::window_const,
+      ym=(mos.y-Render_->camera.getCenter().y)/Render::window_const;
   int cursor=0;
+
+  // Render_->addMessage(to_string(ym));
+
+  // Render_->addMessage(to_string(Render_->camera.getCenter().x));
+
 
   for(int k=0;k<8;k++) {//Display valid
     int x=tpi[k]+pos->col,y=tpj[k]+pos->row;
@@ -294,11 +300,11 @@ void Game::displayTeleport(Vector2f mos) const {
       continue;
     }
     Sprite sprite(Render::textures[("Teleport")]);
-    sprite.setPosition(Render::window_const*x,Render::window_const*y);
+    sprite.setPosition(Render::window_const*x+Render::scene_const,Render::window_const*y+Render::scene_const);
 
     sprite.setColor(Color(255,255,255,64));
     Render_->setScale(sprite);
-    Render_->window.draw(sprite);
+    Render_->sceneTexture.draw(sprite);
 
     int dist=abs(xm-x)+abs(ym-y);
     if(dist<minDist) {
@@ -310,13 +316,13 @@ void Game::displayTeleport(Vector2f mos) const {
   Sprite sprite(Render::textures["Teleport"]);
 
   //Display nearest to cursor
-  Vector2f pf((tpi[cursor]+pos->col)*Render::window_const,
-    (tpj[cursor]+pos->row)*Render::window_const);
+  Vector2f pf((tpi[cursor]+pos->col)*Render::window_const+Render::scene_const,
+    (tpj[cursor]+pos->row)*Render::window_const+Render::scene_const);
 
   sprite.setPosition(pf);
   sprite.setColor(Color(255,255,255,128));
   sprite.setScale(Render::sprite_const,Render::sprite_const);
-  Render_->window.draw(sprite);
+  Render_->sceneTexture.draw(sprite);
 }
 
 //Remove enemy from board
@@ -337,8 +343,8 @@ void Game::Banish(const Position* pos) {
 void Game::Teleport() {
   auto pos=player->position;
   float minDist=FLT_MAX,
-      xm=mos.x/Render::window_const,
-      ym=mos.y/Render::window_const;
+    xm=(mos.x-Render_->camera.getCenter().x)/Render::window_const,
+    ym=(mos.y-Render_->camera.getCenter().y)/Render::window_const;
   int cursor=0;
 
   for(int k=0;k<8;k++) {//Get nearest to cursor
@@ -398,29 +404,33 @@ void Game::centerCamera() {
   Vector2f camTarget=player->getCamera();//Get player coordinate in view/world units (SFML)
   Vector2f current=Render_->camera.getCenter();
 
-  float smooth=0.5f;//Smooth constant
-  current+=(camTarget-current)*smooth*dt;
+  current+=(camTarget-current)*Render_->smooth*Render_->dt;
 
   Render_->camera.setCenter(current);
-  Render_->window.setView(Render_->camera);
+  Render_->sceneTexture.setView(Render_->camera);
+  Render_->lightTexture.setView(Render_->camera);
 }
 
 //DISPLAY ---------------------------------------------
 //Invoke all display methods
 void Game::Display() {
   Render_->window.clear();
-  restartClock();
+  Render_->restartClock();
+  Render_->pla=*player->position;//
 
   Board_->printBoard(*player->position);
   Board_->printValid();
   Board_->printEntities(player,enemies);
 
+  displayTeleport(mos);
+
   displayBanish();//move these to display status
 
   mos=Render_->window.mapPixelToCoords(Mouse::getPosition(Render_->window));
-  displayTeleport(mos);
-  displayStatus();//moves view relative to player
-  Render_->displayMessages();
+  Render_->lightingDisplay(*player->position);
+
+  Render_->Multiply();
+  displayStatus();
 
   Render_->window.display();
 }
@@ -428,8 +438,6 @@ void Game::Display() {
 //Print out information messages
 void Game::displayStatus() {
   int msgRows=0;
-
-  Render_->window.setView(Render_->window.getDefaultView());
 
   //PLAYER
   //ITEM ROWS
@@ -463,14 +471,14 @@ void Game::displayStatus() {
   }
   if(charges){itemRows++;}
 
-  int flash=player->battery;
-  for(int i=0;i<flash;i++) {
-    Sprite sprite(Render::textures["Flash"]);
-
-    sprite.setPosition(1820-110*i,1720-itemRows*100);
-    sprite.setScale(Render::sprite_const,Render::sprite_const);
-    Render_->window.draw(sprite);
-  }
+  // int flash=player->battery;
+  // for(int i=0;i<flash;i++) {
+  //   Sprite sprite(Render::textures["Torch"]);
+  //
+  //   sprite.setPosition(1820-110*i,1720-itemRows*100);
+  //   sprite.setScale(Render::sprite_const,Render::sprite_const);
+  //   Render_->window.draw(sprite);
+  // }
 
   if(player->surging) {
     Text bantxt,teltxt;
@@ -482,11 +490,11 @@ void Game::displayStatus() {
     bantxt.setPosition(50,0);
     Render_->window.draw(bantxt);
 
-    teltxt.setString("T. Teleport");
-    teltxt.setCharacterSize(80);
-    teltxt.setFillColor(Color::White);
-    teltxt.setPosition(50,100);
-    Render_->window.draw(teltxt);
+    // teltxt.setString("T. Teleport");
+    // teltxt.setCharacterSize(80);
+    // teltxt.setFillColor(Color::White);
+    // teltxt.setPosition(50,100);
+    // Render_->window.draw(teltxt);
   }
 
   //key to select ability, left click to use
@@ -509,19 +517,19 @@ void Game::displayStatus() {
     msgRows+=2;
   }
 
-  //key to select ability, left click to use
-  if(player->teleporting) {
-    Text text;
-    text.setFont(Render_->pixlet);
-
-    text.setString("Choose a tile to teleport to with your mouse");
-    text.setCharacterSize(80);
-    text.setFillColor(Color::White);
-    text.setPosition(50,200);
-    Render_->window.draw(text);
-
-    msgRows+=1;
-  }
+  // //key to select ability, left click to use
+  // if(player->teleporting) {
+  //   Text text;
+  //   text.setFont(Render_->pixlet);
+  //
+  //   text.setString("Choose a tile to teleport to with your mouse");
+  //   text.setCharacterSize(80);
+  //   text.setFillColor(Color::White);
+  //   text.setPosition(50,200);
+  //   Render_->window.draw(text);
+  //
+  //   msgRows+=1;
+  // }
 
   //key to select ability, left click to use
   if(player->combat) {
@@ -583,10 +591,12 @@ void Board::printValid(){
     if(not pos){continue;}
     Sprite sprite(Render::textures[("ValidPath")]);
 
-    sprite.setPosition(Render::window_const*pos->col,Render::window_const*pos->row);
+    sprite.setPosition(Render::window_const*pos->col+Render::scene_const,
+      Render::window_const*pos->row+Render::scene_const);
+
     sprite.setColor(Color(255,255,255,128));
     Render_->setScale(sprite);
-    Render_->window.draw(sprite);
+    Render_->sceneTexture.draw(sprite);
   }
 }
 

@@ -48,6 +48,9 @@ void Board::newBoard() {
   board_={};
   gate_placed=false;
 
+  //Reset light objects
+  Render_->clearLights();
+
   //Create new board
   initialBoard();
 }
@@ -61,7 +64,7 @@ const Position* Board::insertTile(int i,int j) {
   it->type=type;
   root_.push_back(idg_++);
 
-  if(type!=TileType::Wall and type!=TileType::Trap) {
+  if(type!=TileType::Wall) {
     walk_positions_.insert(&*it);
   }
   return &*it;
@@ -104,12 +107,17 @@ void Board::addTile(const int i,const int j,const bool edge) {
       if(r>0){root_[r]=pos->id;}
     }
   }
+  //Track lights
+  if(pos->type==TileType::Torch) {
+    Render_->addLight(j,i);
+  }
 }
 
 //Generate random initial board with 11 at center
 void Board::initialBoard() {
   auto[it,b]=board_.insert({0,0,idg_});
   root_.push_back(idg_++);
+  // it->type=TileType::WalkieTalkie;
   it->type=TileType::Start;
   origin_=&*it;
   walk_positions_.insert(&*it);
@@ -164,12 +172,14 @@ void Board::movePlayer(Player* player,const Position* pos) {
     Render_->addMessage("An Eggo has been collected!");
     clearElement(pos);
 
-  }else if(pos->type==TileType::Flash) {
-    player->incFlashDuration();
-    setFog();
-    clearElement(pos);
-
-  }else if(pos->type==TileType::Trap) {
+  }
+  // else if(pos->type==TileType::Torch) {
+  //   player->incFlashDuration();
+  //   setFog();
+  //   clearElement(pos);
+  //
+  // }
+  else if(pos->type==TileType::Trap) {
     if(player->surging) {//Option to remove trap if empowered
       player->toggleTrapped();
 

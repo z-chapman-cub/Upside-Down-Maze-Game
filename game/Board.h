@@ -1,7 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include<random>
 #include<memory>
+#include<unordered_set>
 
 #include "Render.h"
 #include "Entity.h"
@@ -11,7 +13,7 @@ using namespace std;
 //Occupancy of each tile of the board
 enum class TileType {
 	Wall, ClearPath, Eggo, WalkieTalkie,
-	MindFlayerShard, Trap, Gate, Flash, Start
+	MindFlayerShard, Trap, Gate, Torch, Start
 };
 
 class Board {
@@ -63,14 +65,14 @@ private:
 	uniform_int_distribution<> reveal_enemy_chance_;
 
 	inline static vector<TileType> tiles_{TileType::Wall,TileType::ClearPath,TileType::Eggo,
-		TileType::WalkieTalkie,TileType::MindFlayerShard,TileType::Trap,TileType::Flash};
+		TileType::WalkieTalkie,TileType::MindFlayerShard,TileType::Trap,TileType::Torch};
 
 	//Default
-	inline static discrete_distribution<> tile_type_dist_ {0.752,0.200,0.004,0.012,0.012,0.012,0.008};
+	inline static discrete_distribution<> tile_type_dist_ {0.752,0.012,0.004,0.012,0.012,0.008,0.020};
 	//No barriers
-	inline static discrete_distribution<> no_barrier_dist_{0.000,0.952,0.004,0.012,0.012,0.012,0.008};
+	inline static discrete_distribution<> no_barrier_dist_{0.000,0.944,0.004,0.012,0.012,0.008,0.020};
 	//No Eggos
-	inline static discrete_distribution<> no_eggo_dist_   {0.756,0.200,0.000,0.012,0.012,0.012,0.008};
+	inline static discrete_distribution<> no_eggo_dist_   {0.756,0.012,0.000,0.012,0.012,0.008,0.020};
 
 	static TileType genType();
 	static TileType genNoBarrier();
@@ -90,7 +92,7 @@ private:
 			{TileType::MindFlayerShard,"MindFlayerShard"},
 			{TileType::Trap,"Trap"},
 			{TileType::Gate,"Gate"},
-			{TileType::Flash,"Flash"},
+			{TileType::Torch,"Torch"},
 			{TileType::Start,"Start"},
 		};
 
