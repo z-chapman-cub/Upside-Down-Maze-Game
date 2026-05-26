@@ -4,10 +4,10 @@ collecting powerups in a board style game. Originally given as a homework assign
 class, I turned the assignment into an experiment with graph algorithms. The board is dynamically generated as 
 the player moves into unexplored territory while always guaranteeing a path using Disjoint Set Union. Also, the enemies
 use Dijkstra's single-source shortest path algorithm to move closer to the player. Turn logic and event processing
-is written around what the SFML libraries provide.
+is written around what the SFML libraries provide. A shader is used to create a fog of war effect with multiple light sources.
 
 ## How to Run
 From the /maze directory compile and run with "make".
 
 Preview:
-![Demo Gif](maze.gif)
+![Maze Gif](maze.gif)
