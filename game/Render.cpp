@@ -29,7 +29,7 @@ Render::Render():
 
   lightTexture.create(1920,1920);
   lightShader.loadFromFile("light.frag",Shader::Fragment);
-  lightShader.setUniform("radius",500.0f);
+  lightShader.setUniform("radius",400.0f);
   light.setTexture(lightTexture.getTexture());
 
   sceneTexture.create(1920,1920);
@@ -148,6 +148,7 @@ void Render::Multiply() {
 }
 
 void Render::addLight(float x,float y) {
+  //if numlights 100 repl old ones or set max to tile count on screen
   lights[numLights]=Glsl::Vec2(x*window_const+scene_const,y*window_const+scene_const);
   lightsShifted[numLights++]=Glsl::Vec2(x*window_const+scene_const-pla.col*window_const,y*window_const+scene_const-pla.row*window_const);
 }
